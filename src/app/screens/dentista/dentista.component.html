@@ -1,0 +1,26 @@
+<!--
+RadSideDrawer is a UI component part of the Progress NativeScript UI set of components.
+Learn more about the RadSideDrawer UI component and how it can be customized in this documentation article:
+https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawer/getting-started
+-->
+<RadSideDrawer [drawerTransition]="sideDrawerTransition">
+  <GridLayout tkDrawerContent rows="auto, *" class="sidedrawer sidedrawer-left">
+  
+      <ScrollView row="1" class="sidedrawer-content">
+          <StackLayout>
+              <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/agenda')" (tap)="onNavItemTap('/agenda')">
+                  <Label col="0" text="&#xf015;" class="fa"></Label>
+                  <Label col="1" text="Agenda" class="p-r-10"></Label>
+              </GridLayout>
+
+              <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/atestado')" (tap)="onNavItemTap('/atestado')">
+                  <Label col="0" text="&#xf1ea;" class="fa"></Label>
+                  <Label col="1" text="Atestado" class="p-r-10"></Label>
+              </GridLayout>
+
+          </StackLayout>
+      </ScrollView>
+  </GridLayout>
+
+  <page-router-outlet tkMainContent class="page page-content"></page-router-outlet>
+</RadSideDrawer>

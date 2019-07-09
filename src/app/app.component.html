@@ -1,0 +1,16 @@
+<!-- https://docs.nativescript.org/angular/core-concepts/angular-navigation.html#page-router-outlet -->
+<!-- <RadSideDrawer></RadSideDrawer> -->
+ <!--    <StackLayout tkDrawerContent class="drawer-container">
+        <Label text="Nome do paciente"></Label>
+        <StackLayout class="hr-light m-10"></StackLayout>
+        <button class="btn btn-primary btn-rounded-sm" text="HOME" nsRouterLink="/ns-patient-tab" [clearHistory]="true" (tap)="Agendamento()"></button>
+        <button class="btn btn-primary btn-rounded-sm" text="ATESTADO" nsRouterLink="/ns-sick-note" [clearHistory]="true" (tap)="Exames()"></button>
+        <button class="btn btn-primary btn-rounded-sm" text="EXAMES" nsRouterLink="/ns-exam" [clearHistory]="true" (tap)="Atestado()"></button>
+        <button class="btn btn-primary btn-rounded-sm" text="SAIR" nsRouterLink="/" [clearHistory]="true" (tap)="Sair()"></button>
+    </StackLayout>
+ -->
+    <StackLayout>
+        <page-router-outlet></page-router-outlet>
+    </StackLayout>
+
+

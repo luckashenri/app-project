@@ -1,0 +1,21 @@
+<StackLayout>
+    <Image src="~/images/logo.jpg" width="156" height="152"></Image>
+    <SegmentedBar [items]="segmentedBarItems" [(ngModel)]="selectedBarIndex" class="m-5"></SegmentedBar>
+
+
+    <StackLayout class="form" [formGroup]="form">
+        <StackLayout class="input-field">
+            <Label class="label" text="Email" [ngClass]="{ invalid: !emailControlisValid }"></Label>
+            <TextField class="input input-border" returnKeyType="next" keyboardType="email" [autocorrect]="false" (returnPress)="onDone()" autocapitalizationType="none" formControlName="email" #emailEl></TextField>
+            <Label *ngIf="!emailControlisValid" text="Preencha um e-mail válido"></Label>
+        </StackLayout>
+
+        <StackLayout class="input-field">
+                <Label class="label" text="Senha" [ngClass]="{ invalid: !passControlisValid }"></Label>
+                <TextField class="input input-border" returnKeyType="done" [autocorrect]="false"  autocapitalizationType="none" [secure]="true" formControlName="pass" (returnPress)="onDone()" #passEl></TextField>
+                <Label *ngIf="!passControlisValid" text="Senha de no mínimo 6 caracteres"></Label>
+        </StackLayout>
+    </StackLayout>
+
+    <Button class="btn btn-primary" text="ENTRAR" (tap)="Login()" [clearHistory]="true" [hasMenu]="false"></Button>
+</StackLayout>

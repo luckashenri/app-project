@@ -1,0 +1,47 @@
+import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
+import { NativeScriptModule } from "nativescript-angular/nativescript.module";
+import { NativeScriptHttpClientModule } from 'nativescript-angular/http-client';
+import { NativeScriptFormsModule} from 'nativescript-angular/forms';
+import { NativeScriptCommonModule } from 'nativescript-angular/common';
+import { NativeScriptUISideDrawerModule } from 'nativescript-ui-sidedrawer/angular/side-drawer-directives'
+import { AppRoutingModule } from "./app-routing.module";
+import { ReactiveFormsModule } from "@angular/forms";
+
+//paciente
+import { AppComponent } from "./app.component";
+import { LoginComponent } from './screens/login/login.component';
+import { NativeScriptRouterModule } from 'nativescript-angular/router';
+
+// Uncomment and add to NgModule imports if you need to use two-way binding
+// import { NativeScriptFormsModule } from "nativescript-angular/forms";
+
+// Uncomment and add to NgModule imports if you need to use the HttpClient wrapper
+// import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
+
+@NgModule({
+    bootstrap: [
+        AppComponent
+    ],
+    imports: [
+        NativeScriptModule,
+        NativeScriptFormsModule,
+        ReactiveFormsModule,
+        NativeScriptCommonModule,
+        NativeScriptHttpClientModule,
+        NativeScriptUISideDrawerModule,
+        NativeScriptRouterModule,
+        AppRoutingModule,
+    ],
+    declarations: [
+        AppComponent,
+        LoginComponent
+    ],
+    providers: [],
+    schemas: [
+        NO_ERRORS_SCHEMA
+    ]
+})
+/*
+Pass your application module to the bootstrapModule function located in main.ts to start your app
+*/
+export class AppModule { }

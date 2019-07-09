@@ -1,0 +1,27 @@
+<ActionBar class="action-bar">
+    <!-- 
+    Use the NavigationButton as a side-drawer button in Android
+    because ActionItems are shown on the right side of the ActionBar
+    -->
+    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+    <!-- 
+    Use the ActionItem for IOS with position set to left. Using the
+    NavigationButton as a side-drawer button in iOS is not possible,
+    because its function is to always navigate back in the application.
+    -->
+    <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
+        ios.position="left">
+    </ActionItem>
+    <Label class="action-bar-title" text="Agenda"></Label>
+</ActionBar>
+<GridLayout class="page page-content">
+    <!-- <Button class="btn btn-primary btn-active" id="button" text="Tap me!" (tap)="onTap($event)"></Button> -->
+
+    <ListView [items]="agenda" class="list-group">
+        <ng-template let-dataitem="item" let-i="index">
+            <StackLayout orientation="horizontal" class="list-group-item">
+                <Label [text]="agenda.titulo"></Label>
+            </StackLayout>
+        </ng-template>
+    </ListView>
+</GridLayout>

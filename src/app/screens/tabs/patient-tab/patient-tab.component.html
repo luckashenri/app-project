@@ -1,0 +1,25 @@
+
+<RadSideDrawer>
+     <StackLayout tkDrawerContent class="drawer-container">
+        <Label text="Nome do paciente"></Label>
+        <StackLayout class="hr-light m-10"></StackLayout>
+        <button class="btn btn-primary btn-rounded-sm" text="HOME" nsRouterLink="/ns-patient-tab" [clearHistory]="true" (tap)="Agendamento()"></button>
+        <button class="btn btn-primary btn-rounded-sm" text="ATESTADO" nsRouterLink="/ns-sick-note" [clearHistory]="true" (tap)="Exames()"></button>
+         <button class="btn btn-primary btn-rounded-sm" text="EXAMES" nsRouterLink="/ns-exam" [clearHistory]="true" (tap)="Atestado()"></button>
+        <button class="btn btn-primary btn-rounded-sm" text="SAIR" nsRouterLink="/" [clearHistory]="true" (tap)="Quit()"></button>
+    </StackLayout>
+
+
+
+    <TabView androidTabsPosition="bottom" androidSelectedTabHighlightColor="#048FE9" selectedTabTextColor="#048FE9" tkMainContent>
+    <!--     <page-router-outlet *tabItem="{title: 'Receita', iconSource: 'res://ic_medicine'}" name="receita">
+        </page-router-outlet> -->
+        <page-router-outlet *tabItem="{title: 'Receita'}" name="receita">
+        </page-router-outlet>
+        <page-router-outlet *tabItem="{title: 'Agendamentos'}" name="agendamento">
+        </page-router-outlet>
+        <page-router-outlet *tabItem="{title: 'Histórico'}" name="historico">
+        </page-router-outlet>
+    </TabView>
+
+
